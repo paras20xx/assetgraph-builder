@@ -52,9 +52,12 @@ new AssetGraph({ root: commandLineOptions.root })
     },
   })
   .queue(function (assetGraph) {
-    var documents = _.map(assetGraph.findAssets({ type: 'Html' }), 'parseTree');
+    const documents = _.map(
+      assetGraph.findAssets({ type: 'Html' }),
+      'parseTree'
+    );
     function isSelectorUsed(selector) {
-      var giveUp = false;
+      let giveUp = false;
       // Preprocess pseudo-classes
       selector = selector.replace(
         /:([a-z-]+)(\()?/g,
@@ -89,10 +92,12 @@ new AssetGraph({ root: commandLineOptions.root })
         function (cssRule) {
           if (cssRule.type === 'rule') {
             // STYLE_RULE
-            var selectors = cssRule.selectors;
-            var unusedSelectors = cssRule.selectors.filter(function (selector) {
-              return !isSelectorUsed(selector);
-            });
+            const selectors = cssRule.selectors;
+            const unusedSelectors = cssRule.selectors.filter(
+              function (selector) {
+                return !isSelectorUsed(selector);
+              }
+            );
             if (unusedSelectors.length > 0) {
               if (unusedSelectors.length === selectors.length) {
                 console.warn('Unused rule: ' + cssRule.toString());

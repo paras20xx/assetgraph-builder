@@ -209,7 +209,7 @@ setup, yet don't want to allow `'unsafe-inline'` in your policy, you can
 use a nonce in development:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta
