@@ -41,8 +41,8 @@
   ],
   "dependencies": {
     "assetgraph": "7.9.0",
-    "assetgraph-hashfiles": "^1.0.1",
-    "assetgraph-sprite": "^3.2.0",
+    "assetgraph-hashfiles": "^1.1.1",
+    "assetgraph-sprite": "^3.2.1",
     "browserslist": "^4.22.2",
     "chalk": "^4.0.0",
     "esanimate": "^2.0.0",
